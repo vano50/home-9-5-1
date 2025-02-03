@@ -11,7 +11,7 @@ public:
     explicit Stopwatch(QObject *parent = nullptr);
 
 signals:
-    void timeChanged(int seconds);
+    void timeChanged(int seconds, int mili);
     void roundCompleted(int roundNumber, int elapsedSeconds);
 
 public slots:

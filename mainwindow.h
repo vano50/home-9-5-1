@@ -22,7 +22,7 @@ public:
 private slots:
     void on_startStopButton_clicked();
     void on_clearButton_clicked();
-    void updateTimeDisplay(int seconds);
+    void updateTimeDisplay(int seconds, int mili);
     void addRoundToBrowser(int roundNumber, int elapsedSeconds);
 
 private:

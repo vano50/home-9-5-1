@@ -35,9 +35,9 @@ void MainWindow::on_startStopButton_clicked()
     }
 }
 
-void MainWindow::updateTimeDisplay(int seconds)
+void MainWindow::updateTimeDisplay(int seconds, int mili)
 {
-    QString timeString = QString("%1:%2").arg(seconds / 60, 2, 10, QChar('0')).arg(seconds % 60, 2, 10, QChar('0'));
+    QString timeString = QString("%1:%2.%3").arg(seconds / 60, 2, 10, QChar('0')).arg(seconds % 60, 2, 10, QChar('0')).arg(mili, 4, 10, QChar('0'));
     ui->timeLabel->setText(timeString);
 }
 

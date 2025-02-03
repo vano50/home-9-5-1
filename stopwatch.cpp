@@ -1,4 +1,5 @@
 #include "stopwatch.h"
+#include <QDebug>
 
 Stopwatch::Stopwatch(QObject *parent)
     : QObject(parent), m_running(false), m_rounds(0), m_elapsedMilliseconds(0)
@@ -27,8 +28,9 @@ void Stopwatch::reset()
 {
     m_elapsedMilliseconds = 0;
     m_rounds = 0;
-    emit timeChanged(0);
+    emit timeChanged(0, 0);
 }
+
 int lastElapsedSeconds = 0;
 void Stopwatch::markRound()
 {
@@ -42,5 +44,6 @@ void Stopwatch::markRound()
 void Stopwatch::updateTime()
 {
     m_elapsedMilliseconds += m_timer.interval();
-    emit timeChanged(m_elapsedMilliseconds / 1000);
+    emit timeChanged(m_elapsedMilliseconds / 1000, m_elapsedMilliseconds);
+    qDebug() << m_elapsedMilliseconds;
 }
