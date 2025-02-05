@@ -28,6 +28,7 @@ private:
     int m_elapsedMilliseconds;
     bool m_running;
     int m_rounds;
+    static int lastElapsedSeconds;
 };
 
 #endif // STOPWATCH_H
